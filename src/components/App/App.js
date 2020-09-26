@@ -10,9 +10,12 @@ const { Header, Footer, Content } = Layout;
 class App extends Component {
   render() {
     return (
-     <>
+      <Layout>
+     
       <AppHeader/>
-     </>
+      
+      <Question1/>
+     </Layout>
     );
   }
 }

@@ -1,15 +1,35 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Question1.scss';
-import { Layout } from 'antd';
+import 'antd/dist/antd.css';
+import { Rate } from 'antd';
 
-const { Content } = Layout;
+
+
 
 class Question1 extends Component {
   render() {
     return (
-      <div>
-          <p>Question 1</p>
+     
+       <div className="card">
+
+        <div className="question">
+          <h1>How Are You Feeling Today?</h1>
+        </div>
+
+        <div className="response-input">
+          <Rate
+            defaultValue={2}
+            character={({ index }) => {
+              return index + 1;
+            }}
+          />
+        </div>
+
+        <div className="next-btn">
+          <p>NEXT BUTTON</p>
+        </div>
+
       </div>
     );
   }
