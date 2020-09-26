@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
+import './App.scss';
+import AppHeader from '../AppHeader/AppHeader.js';
+import Question1 from '../Question1/Question1';
+import { Layout, Menu, Breadcrumb } from 'antd';
+
+const { Header, Footer, Content } = Layout;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
-        <br/>
-      </div>
+     <>
+      <AppHeader/>
+     </>
     );
   }
 }
