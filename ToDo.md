@@ -1,10 +1,11 @@
 
 --SETUP--
 
- [] npm install
- [] create db
- [] npm dependencies
-    [] npm install redux react-redux
+ [X] npm install
+ [X] create db
+ [X] npm dependencies
+    [X] npm install redux react-redux
+    [] npm install react-router-dom
 
 --COMPONENTS--
 
@@ -16,6 +17,9 @@
             [] Links to next question   
 
     []Header
+        []PRIME Logo
+        []Title
+        []Question Bar
 
     []How Are you Feeling?
 
@@ -36,3 +40,5 @@
         [] Displays Submitted Feedback Entries
             [] GET from db
             [] DELETE submission
+
+--LINK COMPONENTS--

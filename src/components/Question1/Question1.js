@@ -3,8 +3,7 @@ import axios from 'axios';
 import './Question1.scss';
 import 'antd/dist/antd.css';
 import { Rate } from 'antd';
-
-
+import { Button } from 'antd';
 
 
 class Question1 extends Component {
@@ -17,7 +16,7 @@ class Question1 extends Component {
           <h1>How Are You Feeling Today?</h1>
         </div>
 
-        <div className="response-input">
+        <div className="response-rating">
           <Rate
             defaultValue={2}
             character={({ index }) => {
@@ -27,7 +26,7 @@ class Question1 extends Component {
         </div>
 
         <div className="next-btn">
-          <p>NEXT BUTTON</p>
+          <Button>NEXT</Button>
         </div>
 
       </div>
