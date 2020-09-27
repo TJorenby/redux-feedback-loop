@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 class Question1 extends Component {
 
   state = {
-    rating: '',
+    rating: 0,
   }
 
   setRating = (rating) => {
@@ -26,6 +26,8 @@ class Question1 extends Component {
 
 
   }
+
+
 
   render() {
     console.log('reduxState is:', this.props.reduxState);
@@ -44,7 +46,9 @@ class Question1 extends Component {
           </div>
 
           <div className="next-btn">
-            <Button>
+            <Button
+              disabled={this.state.rating < 1}
+            >
               <Link to='/Q2'>NEXT</Link>
             </Button>
           </div>

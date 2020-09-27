@@ -68,7 +68,9 @@ class ReviewFeedback extends Component {
           <div className="comment-response-review">
 
             <h3>Would You Like To Add A Comment?</h3>
-            <p className="comment-text">{this.props.question4} Test Comment with a lot of text in order to check layout. Test Comment with a lot of text in order to check layout. Test Comment with a lot of text in order to check layout. Test Comment with a lot of text in order to check layout. Test Comment with a lot of text in order to check layout. Test Comment with a lot of text in order to check layout</p>
+            <p className="comment-text">
+              {this.props.question4}
+            </p>
           </div>
 
 
