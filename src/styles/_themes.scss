@@ -1,0 +1,29 @@
+$thm-grey: lightgray;
+
+.card{
+    height: 400px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #AEA;
+    box-shadow: 10px 12px 0.5rem rgba(0,0,0,0.5);
+}
+
+.question {
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 70px;
+}
+
+.response-rating{
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 70px;
+
+}
+
+.next-btn{
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 70px;
+}
