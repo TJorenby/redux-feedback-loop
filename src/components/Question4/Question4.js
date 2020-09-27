@@ -4,6 +4,8 @@ import './Question4.scss';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 class Question4 extends Component {
 
@@ -29,9 +31,13 @@ class Question4 extends Component {
             <h1>Would You Like To Leave A Comment?</h1>
           </div>
           <div className="comment-box">
-            <input
-              type="text"
-              placeholder="Add Comment Here"
+            <TextField
+              id="filled-multiline-static"
+              label="Add Comment Here"
+              multiline
+              rows={4}
+              variant="standard"
+              style={{ width: 400 }}
               onChange={this.onChange}
             />
           </div>
@@ -54,7 +60,7 @@ class Question4 extends Component {
               </Button>
             </Link>
           </div>
-          <div className="page-count">
+          <div className="q4-page-count">
             <h3>4/5</h3>
           </div>
         </div>
