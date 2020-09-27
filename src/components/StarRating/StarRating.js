@@ -23,7 +23,7 @@ const StarRating = (props) => {
                                 value={ratingValue}
                                 onClick={() =>
                                     setRating(ratingValue)}
-                                onChange={() => props.setRating(ratingValue)}
+                                onChange={() => props.setRating(ratingValue)} // onChange is passing the value of ratingValue to Question component
 
                             />
                             <FaStar

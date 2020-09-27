@@ -2,25 +2,42 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Question2.scss';
 import 'antd/dist/antd.css';
-import { Rate } from 'antd';
 import { Button } from 'antd';
+import StarRating from '../StarRating/StarRating';
+import { connect } from 'react-redux';
+
 
 class Question2 extends Component {
-  render() {
-    return (
-     
-       <div className="card">
 
+  state = {
+    rating: '',
+  }
+
+  setRating = (rating) => {
+    this.setState({
+      rating: rating
+    })
+
+    this.props.dispatch({
+      type: "SET_QUESTION_2",
+      payload: rating
+    });
+
+
+  }
+
+  render() {
+    console.log('reduxState is:', this.props.reduxState);
+    console.log('rating is:', this.state.rating);
+    return (
+
+      <div className="card">
         <div className="question">
           <h1>How Well Are You Understanding The Content?</h1>
         </div>
-
         <div className="response-rating">
-          <Rate
-            defaultValue={2}
-            character={({ index }) => {
-              return index + 1;
-            }}
+          <StarRating
+            setRating={this.setRating}
           />
         </div>
 
@@ -33,4 +50,11 @@ class Question2 extends Component {
   }
 }
 
-export default Question2;
+const mapStateToProps = (reduxState) => {
+  // Return props for the Location component
+  return {
+    reduxState
+  };
+}
+
+export default connect(mapStateToProps)(Question2);
