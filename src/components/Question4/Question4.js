@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, HashRouter as Router, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Question4.scss';
 import 'antd/dist/antd.css';
@@ -25,24 +26,26 @@ class Question4 extends Component {
     console.log('reduxState is:', this.props.reduxState);
     console.log('rating is:', this.state.rating);
     return (
+      <Router>
+        <div className="card">
+          <div className="question">
+            <h1>Would You Like To Leave A Comment?</h1>
+          </div>
+          <div className="comment-box">
+            <TextArea
+              rows={4}
+              placeholder="Add Comment Here"
+              onChange={this.onChange}
+            />
+          </div>
 
-      <div className="card">
-        <div className="question">
-          <h1>Would You Like To Leave A Comment?</h1>
+          <div className="next-btn">
+            <Button>
+              <Link to='/Review'>NEXT</Link>
+            </Button>
+          </div>
         </div>
-        <div className="comment-box">
-          <TextArea
-            rows={4}
-            placeholder="Add Comment Here"
-            onChange={this.onChange}
-          />
-        </div>
-
-        <div className="next-btn">
-          <Button>SUBMIT FEEDBACK</Button>
-        </div>
-
-      </div>
+      </Router>
     );
   }
 }

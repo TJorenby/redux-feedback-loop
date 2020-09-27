@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, HashRouter as Router, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Question2.scss';
 import 'antd/dist/antd.css';
@@ -30,22 +31,24 @@ class Question2 extends Component {
     console.log('reduxState is:', this.props.reduxState);
     console.log('rating is:', this.state.rating);
     return (
+      <Router>
+        <div className="card">
+          <div className="question">
+            <h1>How Well Are You Understanding The Content?</h1>
+          </div>
+          <div className="response-rating">
+            <StarRating
+              setRating={this.setRating}
+            />
+          </div>
 
-      <div className="card">
-        <div className="question">
-          <h1>How Well Are You Understanding The Content?</h1>
+          <div className="next-btn">
+            <Button>
+              <Link to='/Q3'>NEXT</Link>
+            </Button>
+          </div>
         </div>
-        <div className="response-rating">
-          <StarRating
-            setRating={this.setRating}
-          />
-        </div>
-
-        <div className="next-btn">
-          <Button>NEXT</Button>
-        </div>
-
-      </div>
+      </Router>
     );
   }
 }

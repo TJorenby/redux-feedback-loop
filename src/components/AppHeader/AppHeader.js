@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, HashRouter as Router, Link } from 'react-router-dom';
 import axios from 'axios';
 import './AppHeader.scss';
 import 'antd/dist/antd.css';
@@ -21,31 +22,38 @@ class AppHeader extends Component {
   render() {
     const { current } = this.state;
     return (
-      
-       <div className="header">
-         <div className="title-logo">
-          <img className="header-img" src="images/prime-logo.png" alt="prime logo" height="100px" width="100px"/>
-          <h1 className="header-title">Daily Feedback</h1>
+      <Router>
+        <div className="header">
+          <div className="title-logo">
+            <img className="header-img" src="images/prime-logo.png" alt="prime logo" height="100px" width="100px" />
+            <h1 className="header-title">Daily Feedback</h1>
+          </div>
+
+          <Steps
+            type="navigation"
+            current={current}
+            onChange={this.onChange}
+            className="site-navigation-steps"
+          >
+            <Step status="finish" title="Question 1" />
+
+            <Step status="process" title="Question 2" />
+
+            <Step status="wait" title="Question 3" />
+
+            <Step status="wait" title="Question 4" />
+
+            <Step status="wait" title="Review" />
+          </Steps>
+
+
+
+
+
+
+
         </div>
-
-        <Steps
-          type="navigation"
-          current={current}
-          onChange={this.onChange}
-          className="site-navigation-steps"
-        >
-          <Step status="finish" title="Question 1" />
-          <Step status="process" title="Question 2" />
-          <Step status="wait" title="Question 3" />
-          <Step status="wait" title="Question 4" />
-          <Step status="wait" title="Review" />
-        </Steps>
-
-
-
-
-       </div>
-
+      </Router>
     );
   }
 }
