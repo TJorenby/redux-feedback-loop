@@ -43,7 +43,9 @@ class Question3 extends Component {
           </div>
 
           <div className="next-btn">
-            <Button>
+            <Button
+              disabled={this.state.rating < 1}
+            >
               <Link to='/Q4'>NEXT</Link>
             </Button>
           </div>

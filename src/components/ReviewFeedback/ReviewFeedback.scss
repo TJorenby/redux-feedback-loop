@@ -1,0 +1,39 @@
+@import'./src/styles/_themes.scss';
+
+
+.review-card{
+    height: 450px;
+    width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #AEA;
+    box-shadow: 10px 12px 0.5rem rgba(0,0,0,0.5);
+}
+
+.response-review {
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.comment-response-review{
+    text-align: center;
+    
+}
+
+.comment-text{
+    font-style: italic;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-btn {
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
