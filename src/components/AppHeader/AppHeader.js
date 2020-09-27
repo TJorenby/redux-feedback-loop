@@ -3,9 +3,7 @@ import { Route, HashRouter as Router, Link } from 'react-router-dom';
 import axios from 'axios';
 import './AppHeader.scss';
 import 'antd/dist/antd.css';
-import { Steps } from 'antd';
 
-const { Step } = Steps;
 
 
 class AppHeader extends Component {
@@ -29,23 +27,10 @@ class AppHeader extends Component {
             <h1 className="header-title">Daily Feedback</h1>
           </div>
 
-          <Steps
-            type="navigation"
-            current={current}
-            onChange={this.onChange}
-            className="site-navigation-steps"
-          >
-            <Step status="finish" title="Question 1" />
+          <div className="steps">
 
-            <Step status="process" title="Question 2" />
 
-            <Step status="wait" title="Question 3" />
-
-            <Step status="wait" title="Question 4" />
-
-            <Step status="wait" title="Review" />
-          </Steps>
-
+          </div>
 
 
 

@@ -1,11 +1,10 @@
 import React, { Component, useState } from 'react';
 import { Route, HashRouter as Router, Link } from 'react-router-dom';
-import axios from 'axios';
 import './Question1.scss';
-import 'antd/dist/antd.css';
-import { Button } from 'antd';
 import StarRating from '../StarRating/StarRating';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import { FaChevronRight } from 'react-icons/fa';
 
 
 class Question1 extends Component {
@@ -46,12 +45,22 @@ class Question1 extends Component {
           </div>
 
           <div className="next-btn">
-            <Button
+            <Link
               disabled={this.state.rating < 1}
-            >
-              <Link to='/Q2'>NEXT</Link>
-            </Button>
+              to='/Q2'>
+              <Button
+                disabled={this.state.rating < 1}
+              >
+
+                Next <FaChevronRight size={25} />
+              </Button>
+            </Link>
           </div>
+
+          <div className="page-count">
+            <h3>1/5</h3>
+          </div>
+
         </div>
       </Router>
 
@@ -67,3 +76,13 @@ const mapStateToProps = (reduxState) => {
 }
 
 export default connect(mapStateToProps)(Question1);
+
+
+
+
+//              <button
+//               variant="outlined"
+//               disabled={this.state.rating < 1}
+//             >
+//               <Link to='/Q2'>NEXT</Link>
+//             </button>

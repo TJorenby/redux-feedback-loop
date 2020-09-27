@@ -5,7 +5,7 @@
  [X] create db
  [X] npm dependencies
     [X] npm install redux react-redux
-    [] npm install react-router-dom
+    [X] npm install react-router-dom
 
 --COMPONENTS--
 
@@ -19,7 +19,7 @@
     [X]Header
         []XPRIME Logo
         [X]Title
-        []Question Bar
+        [X]Question Bar
 
     [X]How Are you Feeling?
 
@@ -28,13 +28,13 @@
     [X]How well are you being supported?
 
     [X]Any comments you want to leave?
-        [] Remove input validation
+        [X] Remove input validation
 
 
-    []Review Feedback
-        [] SUBMIT button replaces NEXT Buttion
-        [] Displays Feedback Results
-        []Sends Review to db
+    [X]Review Feedback
+        [X] SUBMIT button replaces NEXT Buttion
+        [X] Displays Feedback Results
+        [X]Sends Review to db
     
     []Admin
         [] Displays Submitted Feedback Entries

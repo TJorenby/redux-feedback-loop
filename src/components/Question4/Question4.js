@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Route, HashRouter as Router, Link } from 'react-router-dom';
-import axios from 'axios';
 import './Question4.scss';
-import 'antd/dist/antd.css';
-import { Button, Input } from 'antd';
 import { connect } from 'react-redux';
-
-const { TextArea } = Input;
+import Button from '@material-ui/core/Button';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
 class Question4 extends Component {
 
@@ -32,17 +29,33 @@ class Question4 extends Component {
             <h1>Would You Like To Leave A Comment?</h1>
           </div>
           <div className="comment-box">
-            <TextArea
-              rows={4}
+            <input
+              type="text"
               placeholder="Add Comment Here"
               onChange={this.onChange}
             />
           </div>
 
           <div className="next-btn">
-            <Button>
-              <Link to='/Review'>NEXT</Link>
-            </Button>
+            <Link to='/Review'>
+              <Button>
+                Next
+                <FaChevronRight size={25} />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="back-btn">
+            <Link to='/Q3'>
+              <Button
+              // disabled={this.state.rating < 1}
+              >
+                <FaChevronLeft size={25} /> Back
+              </Button>
+            </Link>
+          </div>
+          <div className="page-count">
+            <h3>4/5</h3>
           </div>
         </div>
       </Router>

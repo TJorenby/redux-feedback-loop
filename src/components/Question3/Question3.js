@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Route, HashRouter as Router, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Question3.scss';
-import 'antd/dist/antd.css';
-import { Button } from 'antd';
 import StarRating from '../StarRating/StarRating';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
 
 class Question3 extends Component {
@@ -43,11 +43,30 @@ class Question3 extends Component {
           </div>
 
           <div className="next-btn">
-            <Button
+            <Link
               disabled={this.state.rating < 1}
-            >
-              <Link to='/Q4'>NEXT</Link>
-            </Button>
+              to='/Q4'>
+              <Button
+                disabled={this.state.rating < 1}
+              >
+
+                Next
+                <FaChevronRight size={25} />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="back-btn">
+            <Link to='/Q2'>
+              <Button
+              // disabled={this.state.rating < 1}
+              >
+                <FaChevronLeft size={25} /> Back
+              </Button>
+            </Link>
+          </div>
+          <div className="page-count">
+            <h3>3/5</h3>
           </div>
         </div>
       </Router>

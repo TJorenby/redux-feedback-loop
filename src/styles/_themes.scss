@@ -5,7 +5,7 @@ $thm-grey: lightgray;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    background: #AEA;
+    // background: #AEA;
     box-shadow: 10px 12px 0.5rem rgba(0,0,0,0.5);
 }
 
@@ -13,18 +13,39 @@ $thm-grey: lightgray;
     text-align: center;
     background-color: lightblue;
     margin-top: 70px;
+    margin-bottom: 30px;
 }
 
 .response-rating{
     text-align: center;
     background-color: lightblue;
     margin-top: 70px;
+    margin-bottom: 50px;
 
 }
 
 .next-btn{
+    float: right;
     text-align: center;
-    background-color: lightblue;
-    margin-top: 70px;
+    // background-color: lightblue;
+    margin-top: 0px;
 }
+
+.back-btn{
+    float: left;
+    text-align: center;
+    // background-color: lightblue;
+    margin-top: 0px;
+}
+
+
+.page-count{
+    margin-top: 170px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
 
