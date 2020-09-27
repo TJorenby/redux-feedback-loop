@@ -5,12 +5,34 @@ import { connect } from 'react-redux';
 import { Divider, Button } from 'antd';
 import { FaStar } from 'react-icons/fa';
 
+
+
 class ReviewFeedback extends Component {
+
+
+  submitResponse = () => {
+    console.log('in submitResponse:', this.props.newResponse);
+    let newResponse = this.props.newResponse
+    axios({
+      method: 'POST',
+      url: '/feedback',
+      data: newResponse
+    }).then(response => {
+      console.log('back from POST with:', response);
+    }).catch(err => {
+      console.log('error with POST', err);
+    });
+  }
+
+
+
+
+
+
   render() {
     return (
       <div >
         <div className="review-card">
-
           <div className="response-review">
             <h3>How Are You Feeling Today?</h3>
             <p>
@@ -26,7 +48,6 @@ class ReviewFeedback extends Component {
                 })
               }
             </p>
-
           </div>
           <Divider />
           <div className="response-review">
@@ -44,7 +65,6 @@ class ReviewFeedback extends Component {
                 })
               }
             </p>
-
           </div>
           <Divider />
           <div className="response-review">
@@ -62,24 +82,20 @@ class ReviewFeedback extends Component {
                 })
               }
             </p>
-
           </div>
           <Divider />
           <div className="comment-response-review">
-
             <h3>Would You Like To Add A Comment?</h3>
             <p className="comment-text">
               {this.props.question4}
             </p>
           </div>
-
-
         </div>
-
         <div className="submit-btn">
-          <Button>SUBMIT FEEDBACK</Button>
+          <Button
+            onClick={() => this.submitResponse()}
+          >SUBMIT FEEDBACK</Button>
         </div>
-
       </div>
     );
   }
@@ -91,7 +107,9 @@ const mapStateToProps = (reduxState) => {
     question1: reduxState.resultsReducer.question1,
     question2: reduxState.resultsReducer.question2,
     question3: reduxState.resultsReducer.question3,
-    question4: reduxState.resultsReducer.question4
+    question4: reduxState.resultsReducer.question4,
+    newResponse: reduxState.resultsReducer
+
   };
 }
 
