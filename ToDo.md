@@ -11,13 +11,13 @@
 
     Requirements
         [X] Header (displays feedback question)
-        [] Input Field
-            []Alert if Field is empty
+        [X] Input Field
+            [X]Alert if Field is empty
         [X] NEXT Button
-            [] Links to next question   
+            [X] Links to next question   
 
     [X]Header
-        []XPRIME Logo
+        [X]XPRIME Logo
         [X]Title
         [X]Question Bar
 

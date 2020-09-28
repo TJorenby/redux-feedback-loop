@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, HashRouter as Router, Link } from 'react-router-dom';
-import axios from 'axios';
+
+//Style Imports
 import './Question3.scss';
 import StarRating from '../StarRating/StarRating';
 import { connect } from 'react-redux';
@@ -11,7 +12,7 @@ import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 class Question3 extends Component {
 
   state = {
-    rating: '',
+    rating: 0
   }
 
   setRating = (rating) => {
@@ -23,12 +24,9 @@ class Question3 extends Component {
       type: "SET_QUESTION_3",
       payload: rating
     });
-
-
   }
 
   render() {
-    console.log('reduxState is:', this.props.reduxState);
     console.log('rating is:', this.state.rating);
     return (
       <Router>
@@ -37,36 +35,26 @@ class Question3 extends Component {
             <h1>How Well Are You Being Supported?</h1>
           </div>
           <div className="response-rating">
-            <StarRating
-              setRating={this.setRating}
-            />
+            <StarRating setRating={this.setRating} />
           </div>
-
           <div className="next-btn">
             <Link
               disabled={this.state.rating < 1}
               to='/Q4'>
-              <Button
-                disabled={this.state.rating < 1}
-              >
-
-                Next
-                <FaChevronRight size={25} />
+              <Button disabled={this.state.rating < 1}>
+                Next <FaChevronRight size={25} />
               </Button>
             </Link>
           </div>
-
           <div className="back-btn">
             <Link to='/Q2'>
-              <Button
-              // disabled={this.state.rating < 1}
-              >
+              <Button >
                 <FaChevronLeft size={25} /> Back
               </Button>
             </Link>
           </div>
           <div className="page-count">
-            <h3>3/5</h3>
+            <h3>3/4</h3>
           </div>
         </div>
       </Router>
@@ -74,11 +62,4 @@ class Question3 extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => {
-  // Return props for the Location component
-  return {
-    reduxState
-  };
-}
-
-export default connect(mapStateToProps)(Question3);
+export default connect()(Question3);

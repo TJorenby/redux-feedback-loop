@@ -3,8 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 
-// POST route for submitRespons
-
+// POST route for submitResponse
 router.post('/', (req, res) => {
     const newResponse = req.body
     const sqlText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")

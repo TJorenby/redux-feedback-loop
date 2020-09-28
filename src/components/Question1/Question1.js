@@ -1,5 +1,7 @@
-import React, { Component, useState } from 'react';
-import { Route, HashRouter as Router, Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { HashRouter as Router, Link } from 'react-router-dom';
+
+//Style Imports
 import './Question1.scss';
 import StarRating from '../StarRating/StarRating';
 import { connect } from 'react-redux';
@@ -13,6 +15,7 @@ class Question1 extends Component {
     rating: 0,
   }
 
+  // This function triggers onClick and sets the value of state, along with sending the state value to reduxState.
   setRating = (rating) => {
     this.setState({
       rating: rating
@@ -22,67 +25,43 @@ class Question1 extends Component {
       type: "SET_QUESTION_1",
       payload: rating
     });
-
-
   }
 
+  // This renders the question, the StarRating component (which collects the ratingValue and passes it as the argument for setRating()), and the Next button. 
 
-
+  //The Next Button is disabled until this.state.rating < 1. This prevents the user from advancing to the next page until they've provided a rating value. 
   render() {
-    console.log('reduxState is:', this.props.reduxState);
     console.log('rating is:', this.state.rating);
     return (
       <Router>
-
         <div className="card">
           <div className="question">
             <h1>How Are You Feeling Today?</h1>
           </div>
           <div className="response-rating">
-            <StarRating
-              setRating={this.setRating}
-            />
+            <StarRating setRating={this.setRating} />
           </div>
-
           <div className="next-btn">
             <Link
               disabled={this.state.rating < 1}
-              to='/Q2'>
-              <Button
-                disabled={this.state.rating < 1}
-              >
-
+              to='/Q2'
+            >
+              <Button disabled={this.state.rating < 1}>
                 Next <FaChevronRight size={25} />
               </Button>
             </Link>
           </div>
-
           <div className="page-count">
-            <h3>1/5</h3>
+            <h3>1/4</h3>
           </div>
-
         </div>
       </Router>
-
     );
   }
 }
 
-const mapStateToProps = (reduxState) => {
-  // Return props for the Location component
-  return {
-    reduxState
-  };
-}
-
-export default connect(mapStateToProps)(Question1);
+export default connect()(Question1);
 
 
 
 
-//              <button
-//               variant="outlined"
-//               disabled={this.state.rating < 1}
-//             >
-//               <Link to='/Q2'>NEXT</Link>
-//             </button>

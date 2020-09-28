@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, HashRouter as Router, Link } from 'react-router-dom';
 import './App.scss';
-import 'fontsource-roboto';
+import 'antd/dist/antd.css'
 import AppHeader from '../AppHeader/AppHeader.js';
 import Question1 from '../Question1/Question1';
 import Question2 from '../Question2/Question2';
@@ -15,34 +15,35 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <AppHeader />
+        <div className="body">
+          <AppHeader />
 
-        <Route path='/' exact>
-          <Question1 />
-        </Route>
+          <Route path='/' exact>
+            <Question1 />
+          </Route>
 
-        <Route path='/Q2' exact>
-          <Question2 />
-        </Route>
-
-
-        <Route path='/Q3' exact>
-          <Question3 />
-        </Route>
+          <Route path='/Q2' exact>
+            <Question2 />
+          </Route>
 
 
-        <Route path='/Q4' exact>
-          <Question4 />
-        </Route>
+          <Route path='/Q3' exact>
+            <Question3 />
+          </Route>
 
-        <Route path='/Review' exact>
-          <ReviewFeedback />
-        </Route>
 
-        <Route path='/SubConfirmed' exact>
-          <SubmissionConfirmed />
-        </Route>
+          <Route path='/Q4' exact>
+            <Question4 />
+          </Route>
 
+          <Route path='/Review' exact>
+            <ReviewFeedback />
+          </Route>
+
+          <Route path='/SubConfirmed' exact>
+            <SubmissionConfirmed />
+          </Route>
+        </div>
       </Router>
     );
   }

@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
-import { Route, HashRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
+
+//Style Imports
 import './Question4.scss';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 class Question4 extends Component {
 
-  state = {
-    rating: '',
-  }
-
+  // Captures values from text field and sends them to Store
   onChange = (event) => {
-    //dispatch
     this.props.dispatch({
       type: "SET_QUESTION_4",
       payload: event.target.value,
     });
   }
 
+  // This render() contains similar features from previous questions, but with a multi-line text field in place of start-ratings. 
   render() {
-    console.log('reduxState is:', this.props.reduxState);
-    console.log('rating is:', this.state.rating);
+
     return (
       <Router>
         <div className="card">
@@ -32,7 +29,6 @@ class Question4 extends Component {
           </div>
           <div className="comment-box">
             <TextField
-              id="filled-multiline-static"
               label="Add Comment Here"
               multiline
               rows={4}
@@ -41,7 +37,6 @@ class Question4 extends Component {
               onChange={this.onChange}
             />
           </div>
-
           <div className="next-btn">
             <Link to='/Review'>
               <Button>
@@ -50,18 +45,15 @@ class Question4 extends Component {
               </Button>
             </Link>
           </div>
-
           <div className="back-btn">
             <Link to='/Q3'>
-              <Button
-              // disabled={this.state.rating < 1}
-              >
+              <Button>
                 <FaChevronLeft size={25} /> Back
               </Button>
             </Link>
           </div>
           <div className="q4-page-count">
-            <h3>4/5</h3>
+            <h3>4/4</h3>
           </div>
         </div>
       </Router>
@@ -69,11 +61,4 @@ class Question4 extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => {
-  // Return props for the Location component
-  return {
-    reduxState
-  };
-}
-
-export default connect(mapStateToProps)(Question4);
+export default connect()(Question4);

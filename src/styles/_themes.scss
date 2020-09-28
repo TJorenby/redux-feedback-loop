@@ -5,13 +5,13 @@ $thm-grey: lightgray;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    // background: #AEA;
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 10px 12px 0.5rem rgba(0,0,0,0.5);
 }
 
 .question {
     text-align: center;
-    background-color: lightblue;
+    // background-color: lightblue;
     margin-top: 70px;
     margin-bottom: 30px;
 }
@@ -47,5 +47,12 @@ $thm-grey: lightgray;
     text-align: center;
 }
 
-
+.submit-btn {
+    text-align: center;
+    // background-color: lightblue;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
 
